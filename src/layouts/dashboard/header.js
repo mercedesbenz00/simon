@@ -16,11 +16,11 @@ import Logo from 'src/components/logo';
 import SvgColor from 'src/components/svg-color';
 import { useSettingsContext } from 'src/components/settings';
 //
-import { HEADER, NAV } from '../config-layout';
 import Slide from '@mui/material/Slide';
 import { useState, useEffect } from 'react';
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import WalletContextProvider from 'src/components/WalletContextProvider'
+import { HEADER, NAV } from '../config-layout';
 // ----------------------------------------------------------------------
 
 export default function Header({ onOpenNav }) {

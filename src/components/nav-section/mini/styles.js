@@ -12,8 +12,6 @@ export const StyledItem = styled(ListItemButton, {
 
   const activeStyles = {
     root: {
-      color:
-        theme.palette.mode === 'light' ? theme.palette.primary.main : theme.palette.primary.light,
       color: 'white',
       fontSize: '36px',
       backgroundColor: '#7c0909',

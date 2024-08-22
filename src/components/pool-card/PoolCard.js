@@ -5,6 +5,7 @@ import StakeButton from 'src/components/stake-button';
 import Slide from '@mui/material/Slide';
 import Zoom from '@mui/material/Zoom';
 import { useState } from 'react';
+
 const StyledPaper = styled(Paper)(({ theme }) => ({
   borderRadius: '12px',
   padding: '20px',
@@ -77,7 +78,7 @@ const PoolCard = ({ onStakeButtonClick, mode = 'Active' }) => {
   const [mounted, setMounted] = React.useState(false);
   React.useEffect( () => {
     setMounted(true);
-  })
+  }, [])
 
   return (
     <StyledPaper elevation={3}>

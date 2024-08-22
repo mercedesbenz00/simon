@@ -43,7 +43,7 @@ export default function OneView() {
   const [mounted, setMounted] = React.useState(false);
   React.useEffect( () => {
     setMounted(true);
-  })
+  }, [])
   return (
     <Container maxWidth={false} sx={{ bgcolor: '#0060A9', height: '100%' }}>
       {/* Top Cards Section */}
