@@ -6,18 +6,12 @@ import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 // routes
 import { RouterLink } from 'src/routes/components';
-import Image from 'next/image';
 
 // ----------------------------------------------------------------------
 
 const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
   const theme = useTheme();
 
-  const PRIMARY_LIGHT = theme.palette.primary.light;
-
-  const PRIMARY_MAIN = theme.palette.primary.main;
-
-  const PRIMARY_DARK = theme.palette.primary.dark;
 
   // OR using local (public folder)
   // -------------------------------------------------------
@@ -33,7 +27,7 @@ const Logo = forwardRef(({ disabledLink = false, sx, ...other }, ref) => {
     <Box
       component="img"
       src="/favicon/attachment.png"
-      sx={{ width: '60%', height: 'auto', cursor: 'pointer', ...sx }}
+      sx={{ height: 'auto', cursor: 'pointer', ...sx }}
     />
   );
 

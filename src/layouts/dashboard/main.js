@@ -47,15 +47,20 @@ export default function Main({ children, sx, ...other }) {
         minHeight: 1,
         display: 'flex',
         flexDirection: 'column',
-        pt: `${HEADER.H_MOBILE}px`,
+        // pt: `${HEADER.H_MOBILE}px`,
         ...(lgUp && {
-          pt: `${HEADER.H_DESKTOP}px`,
+          // pt: `${HEADER.H_DESKTOP}px`,
           width: `calc(100% - ${NAV.W_VERTICAL}px)`,
           ...(isNavMini && {
             width: `calc(100% - ${NAV.W_MINI}px)`,
           }),
         }),
         ...sx,
+        ml: '-200px',
+        pl: '200px',
+        mb: '30px',
+        pb: '60px',
+        backgroundColor: '#5F1400'
       }}
       {...other}
     >

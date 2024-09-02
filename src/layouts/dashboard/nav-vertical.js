@@ -48,8 +48,6 @@ export default function NavVertical({ openNav, onCloseNav }) {
         },
       }}
     >
-      <Logo sx={{ mt: 3, ml: 6, mb: 3}} />
-
       <NavSectionVertical
         data={navData}
         config={{
@@ -71,22 +69,39 @@ export default function NavVertical({ openNav, onCloseNav }) {
       sx={{
         flexShrink: { lg: 0 },
         width: { lg: NAV.W_VERTICAL },
-        bgcolor: '#A82400',
+        height: 'calc(100vh - 122px)',
+        position: 'relative',
+        top: '82px',
+        background: 'linear-gradient(133.69deg, #A82400 51.24%, #A82400 71.53%, #0060A9 71.53%);',
+        clipPath: 'polygon(0 -10000px, 100% -10000px, 100% 90%, 0 100%)',
       }}
     >
-      <NavToggleButton />
+      {/* <NavToggleButton /> */}
+      <Box
+        sx={{
+          position: 'relative',
+          width: '106%',
+          left: '50%',
+          top: '-128px',
+          transform: 'translate(-50%, 0)',
+        }}
+      >
+        <Logo sx={{ position: 'relative' }} />
+      </Box>
 
       {lgUp ? (
-        <Stack
-          sx={{
-            height: 1,
-            position: 'fixed',
-            width: NAV.W_VERTICAL,
-            borderRight: (theme) => `dashed 1px ${theme.palette.divider}`,
-          }}
-        >
-          {renderContent}
-        </Stack>
+        <Box sx={{mt: '-80px', position: 'relative' }}>
+          <Stack
+            sx={{
+              height: 1,
+              position: 'relative',
+              width: NAV.W_VERTICAL,
+              borderRight: (theme) => `dashed 1px ${theme.palette.divider}`,
+            }}
+          >
+            {renderContent}
+          </Stack>
+        </Box>
       ) : (
         <Drawer
           open={openNav}

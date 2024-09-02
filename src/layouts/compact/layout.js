@@ -10,7 +10,6 @@ import { HeaderSimple as Header } from '../_common';
 export default function CompactLayout({ children }) {
   return (
     <>
-      <Header />
 
       <Container component="main">
         <Stack

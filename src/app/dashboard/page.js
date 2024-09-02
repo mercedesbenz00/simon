@@ -1,5 +1,6 @@
 // sections
 import OneView from 'src/sections/one/view';
+import Box from '@mui/material/Box'
 
 // ----------------------------------------------------------------------
 
@@ -7,6 +8,8 @@ export const metadata = {
   title: 'Dashboard: One',
 };
 
-export default function Page() {
-  return <OneView />;
-}
+const Page = () => (
+    <OneView />
+)
+
+export default Page;

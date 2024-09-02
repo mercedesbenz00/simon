@@ -1,0 +1,16 @@
+.button {
+    background-color: #0060A9 !important;
+    color: #FFC700 !important;
+    display: flex;
+    width: 250px;
+    height: 60px;
+    font-size: 25px !important;
+    font-weight: 600 !important;
+    font-family: cursive !important;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-transform: none !important;
+}

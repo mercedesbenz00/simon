@@ -46,6 +46,21 @@ const ICONS = {
 export function useNavData() {
   const data = useMemo(
     () => [
+      {
+        //subheader: 'management',
+        items: [
+          {
+            title: 'Dashboard',
+            path: paths.dashboard.group.root,
+            icon: ICONS.folder,
+            // children: [
+            //   { title: 'four', path: paths.dashboard.group.root },
+            //   { title: 'five', path: paths.dashboard.group.five },
+            //   { title: 'six', path: paths.dashboard.group.six },
+            // ],
+          },
+        ],
+      },
       // OVERVIEW
       // ----------------------------------------------------------------------
       {
@@ -60,24 +75,55 @@ export function useNavData() {
           // },
         ],
       },
+      {
+        //subheader: 'management',
+        items: [
+          {
+            title: 'Chat',
+            path: paths.dashboard.group.five,
+            icon: ICONS.chat,
+            // children: [
+            //   { title: 'four', path: paths.dashboard.group.root },
+            //   { title: 'five', path: paths.dashboard.group.five },
+            //   { title: 'six', path: paths.dashboard.group.six },
+            // ],
+          },
+        ],
+      },
+      {
+        //subheader: 'management',
+        items: [
+          {
+            title: 'Social',
+            path: paths.dashboard.group.six,
+            icon: ICONS.blog,
+            // children: [
+            //   { title: 'four', path: paths.dashboard.group.root },
+            //   { title: 'five', path: paths.dashboard.group.five },
+            //   { title: 'six', path: paths.dashboard.group.six },
+            // ],
+          },
+        ],
+      },
+      {
+        //subheader: 'management',
+        items: [
+          {
+            title: 'Docs',
+            path: paths.dashboard.two,
+            icon: ICONS.file,
+            // children: [
+            //   { title: 'four', path: paths.dashboard.group.root },
+            //   { title: 'five', path: paths.dashboard.group.five },
+            //   { title: 'six', path: paths.dashboard.group.six },
+            // ],
+          },
+        ],
+      },
 
       // MANAGEMENT
       // ----------------------------------------------------------------------
-      // {
-      //   subheader: 'management',
-      //   items: [
-      //     {
-      //       title: 'user',
-      //       path: paths.dashboard.group.root,
-      //       icon: ICONS.user,
-      //       children: [
-      //         { title: 'four', path: paths.dashboard.group.root },
-      //         { title: 'five', path: paths.dashboard.group.five },
-      //         { title: 'six', path: paths.dashboard.group.six },
-      //       ],
-      //     },
-      //   ],
-      // },
+       
     ],
     []
   );

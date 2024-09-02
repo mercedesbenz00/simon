@@ -1,5 +1,10 @@
 module.exports = {
   trailingSlash: true,
+  // eslint: {
+  //   // Warning: This allows production builds to successfully complete even if
+  //   // your project has ESLint errors.
+  //   ignoreDuringBuilds: true,
+  // },
   modularizeImports: {
     '@mui/material': {
       transform: '@mui/material/{{member}}',

@@ -1,9 +1,8 @@
 // @mui
-import { alpha, styled } from '@mui/material/styles';
+import { styled } from '@mui/material/styles';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListSubheader from '@mui/material/ListSubheader';
 import ListItemButton from '@mui/material/ListItemButton';
-import { color } from 'framer-motion';
 
 // ----------------------------------------------------------------------
 
@@ -16,7 +15,7 @@ export const StyledItem = styled(ListItemButton, {
 
   const activeStyles = {
     root: {
-      color: 'white',
+      color: '#FFD700',
       fontSize: '36px',
       backgroundColor: '#7c0909',
       '&:hover': {
@@ -24,7 +23,7 @@ export const StyledItem = styled(ListItemButton, {
       },
     },
     sub: {
-      color: theme.palette.text.primary,
+      color: '#FFD700',
       backgroundColor: 'transparent',
       '&:hover': {
         backgroundColor: theme.palette.action.hover,

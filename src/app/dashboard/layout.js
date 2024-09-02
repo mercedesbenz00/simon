@@ -2,9 +2,9 @@
 
 import PropTypes from 'prop-types';
 // auth must be correct by when....
-import { AuthGuard } from 'src/auth/guard';
 // components
 import DashboardLayout from 'src/layouts/dashboard';
+import Box from '@mui/material/Box'
 
 // ----------------------------------------------------------------------
 
@@ -13,7 +13,7 @@ export default function Layout({ children }) {
     // <AuthGuard>
     //   <DashboardLayout>{children}</DashboardLayout>
     // </AuthGuard>
-    <DashboardLayout>{children}</DashboardLayout>
+      <DashboardLayout>{children}</DashboardLayout>
 
   );
 }

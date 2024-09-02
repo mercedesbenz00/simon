@@ -1,4 +1,4 @@
-import { Box, Typography, Grid, Paper } from '@mui/material';
+import { Typography, Grid, Paper } from '@mui/material';
 
 export default function FourCard() {
     return (
