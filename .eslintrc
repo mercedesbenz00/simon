@@ -107,6 +107,7 @@
         "args": "after-used",
         "argsIgnorePattern": "^_"
       }
-    ]
+    ],
+    "react/prop-types": "off"
   }
 }

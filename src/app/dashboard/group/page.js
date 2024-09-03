@@ -1,12 +1,12 @@
 // sections
-import FourView from 'src/sections/four/view';
-
-// ----------------------------------------------------------------------
+import OneView from 'src/sections/one/view';
 
 export const metadata = {
-  title: 'Dashboard: Four',
+  title: 'Dashboard',
 };
 
-export default function Page() {
-  return <FourView />;
-}
+const Page = () => (
+    <OneView />
+)
+
+export default Page;

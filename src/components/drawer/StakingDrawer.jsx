@@ -100,7 +100,7 @@ function StakingDrawer({ open, onClose }) {
                 alignItems: 'center',
               }}
             >
-              <p style={{ fontWeight: 'bold' }}>AVAILABLE TO STAKE:</p> <span>0 AIT</span>
+              <span style={{ fontWeight: 'bold' }}>AVAILABLE TO STAKE:</span> <span>0 AIT</span>
             </Typography>
             <Divider sx={{ marginBottom: 2 }} />
           </>
@@ -113,7 +113,7 @@ function StakingDrawer({ open, onClose }) {
             alignItems: 'center',
           }}
         >
-          <p>WITHDRAW AMOUNT:</p> <span>0 AIT</span>
+          <span>WITHDRAW AMOUNT:</span> <span>0 AIT</span>
         </Typography>
         <Divider sx={{ marginBottom: 2 }} />
 
@@ -125,7 +125,7 @@ function StakingDrawer({ open, onClose }) {
             alignItems: 'center',
           }}
         >
-          <p>EARNED REWARD:</p>
+          <span>EARNED REWARD:</span>
           <span>0 AIT</span>
         </Typography>
         <Divider sx={{ marginBottom: 2 }} />
@@ -138,7 +138,7 @@ function StakingDrawer({ open, onClose }) {
             alignItems: 'center',
           }}
         >
-          <p>REWARD REVENUE ETH:</p>
+          <span>REWARD REVENUE ETH:</span>
           <span>N/A ETH</span>
         </Typography>
         <Divider sx={{ marginBottom: 2 }} />
@@ -151,7 +151,7 @@ function StakingDrawer({ open, onClose }) {
             alignItems: 'center',
           }}
         >
-          <p>LOCK END DATE:</p>
+          <span>LOCK END DATE:</span>
           <span> 0 days, 0 hours, 0 minutes, 0 seconds</span>
         </Typography>
         <Divider sx={{ marginBottom: 2 }} />
@@ -178,20 +178,20 @@ function StakingDrawer({ open, onClose }) {
             >
               Disconnect Wallet
             </Button>
-              <Button
-                variant="contained"
-                color="secondary"
-                fullWidth
-                sx={{
-                  backgroundColor: '#3AAFA9',
-                  color: '#fff',
-                  paddingY: 1.5,
-                  textTransform: 'none',
-                  fontWeight: 'bold',
-                }}
-              >
-                Claim reward
-              </Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              fullWidth
+              sx={{
+                backgroundColor: '#3AAFA9',
+                color: '#fff',
+                paddingY: 1.5,
+                textTransform: 'none',
+                fontWeight: 'bold',
+              }}
+            >
+              Claim reward
+            </Button>
           </Box>
         )}
         {activeTab === 1 && (

@@ -35,7 +35,7 @@ export default function DashboardLayout({ children }) {
   if (isHorizontal) {
     return (
       <>
-
+        <Header onOpenNav={nav.onTrue} />
         {lgUp ? renderHorizontal : renderNavVertical}
 
         <Main>{children}</Main>
@@ -46,13 +46,13 @@ export default function DashboardLayout({ children }) {
   if (isMini) {
     return (
       <>
-
+        <Header onOpenNav={nav.onTrue} />
         <Box
           sx={{
             minHeight: 1,
             display: 'flex',
             flexDirection: { xs: 'column', lg: 'row' },
-            filter: 'drop-shadow(10px 6px 13.1px rgba(0, 0, 0, 0.15))'
+            filter: 'drop-shadow(10px 6px 13.1px rgba(0, 0, 0, 0.15))',
           }}
         >
           {lgUp ? renderNavMini : renderNavVertical}
@@ -65,7 +65,7 @@ export default function DashboardLayout({ children }) {
 
   return (
     <>
-
+      <Header onOpenNav={nav.onTrue} />
       <Box
         sx={{
           minHeight: 1,

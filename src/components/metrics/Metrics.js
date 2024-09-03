@@ -8,19 +8,17 @@ const metricsData = [
   { label: 'Wallet Tokens', value: '153 SIMON' }
 ];
 
-const Metrics = () => {
-  return (
-    <Grid container spacing={3}>
-      {metricsData.map((metric, index) => (
-        <Grid item xs={12} md={3} key={index} >
-          <Box bgcolor="#5F1400" color="#FFD700"  borderRadius={0} textAlign="center" border={metric.border ? metric.border : 'none'}>
-            <Typography >{metric.label}</Typography>
-            <Typography variant="h4">{metric.value}</Typography>
-          </Box>
-        </Grid>
-      ))}
-    </Grid>
-  );
-};
+const Metrics = () => (
+  <Grid container spacing={3}>
+    {metricsData.map((metric, index) => (
+      <Grid item xs={12} md={3} key={index} >
+        <Box bgcolor="#5F1400" color="#FFD700"  borderRadius={0} textAlign="center" border={metric.border ? metric.border : 'none'}>
+          <Typography >{metric.label}</Typography>
+          <Typography variant="h4">{metric.value}</Typography>
+        </Box>
+      </Grid>
+    ))}
+  </Grid>
+);
 
 export default Metrics;

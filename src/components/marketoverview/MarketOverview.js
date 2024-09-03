@@ -32,9 +32,7 @@ const MarketOverview = () => {
         titleAlign: 'center',
         displayColors: false,
         callbacks: {
-          label: function (tooltipItem) {
-            return `$${tooltipItem.raw.toFixed(5)}`; // Show more precision in tooltips
-          },
+          label: (tooltipItem) => `$${tooltipItem.raw.toFixed(5)}` // Show more precision in tooltips
         },
       },
     },
@@ -55,9 +53,7 @@ const MarketOverview = () => {
             weight: 'bold',
             size: 10, // Reduced font size
           },
-          callback: function (value) {
-            return `$${value.toFixed(4)}`; // Add USD formatting
-          },
+          callback: (value) => `$${value.toFixed(4)}` // Add USD formatting
         },
       },
     },
@@ -113,7 +109,7 @@ const MarketOverview = () => {
               Candle
             </Button>
           </ButtonGroup>
-          <ButtonGroup variant="contained" size="small">
+          <ButtonGroup variant="contained" size="small" sx={{display: {xs: 'none', sm: 'block'}}}>
             {['1D', '7D', '1M', '3M', 'ALL'].map((label) => (
               <Button
                 key={label}

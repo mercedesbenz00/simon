@@ -100,11 +100,21 @@ const PoolCard = ({ onStakeButtonClick, mode = 'Active' }) => {
     setMounted(true);
   }, []);
 
+  const title = React.useMemo(() => {
+    let prefix = '';
+    if (mode.toUpperCase() === 'ACTIVE')
+      prefix = '+';
+    else if (mode.toUpperCase() === 'CLOSED')
+      prefix = '-';
+    return `${prefix} ${mode.toUpperCase()} POOLS`
+  }, [mode]);
+
   return (
     <StyledPaper elevation={3}>
       <Slide direction="left" in={mounted} style={{ transitionDelay: mounted ? '300ms' : '0ms' }} timeout={600}>
         <Title variant="h6">
-          {`${mode.toUpperCase() === 'ACTIVE' ? '+' : mode.toUpperCase() === 'CLOSED' ? '-' : ''} ${mode.toUpperCase()} POOLS`}
+          {/* {`${mode.toUpperCase() === 'ACTIVE' ? '+' : (mode.toUpperCase() === 'CLOSED' ? '-' : '')} ${mode.toUpperCase()} POOLS`} */}
+          {title}
         </Title>
       </Slide>
       <Zoom in={mounted} style={{ transitionDelay: mounted ? '700ms' : '0ms' }} timeout={600}>

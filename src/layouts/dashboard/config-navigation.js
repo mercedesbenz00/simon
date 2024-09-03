@@ -8,10 +8,6 @@ import SvgColor from 'src/components/svg-color';
 
 const icon = (name) => (
   <SvgColor src={`/assets/icons/navbar/${name}.svg`} sx={{ width: 1, height: 1 }} />
-  // OR
-  // <Iconify icon="fluent:mail-24-filled" />
-  // https://icon-sets.iconify.design/solar/
-  // https://www.streamlinehq.com/icons
 );
 
 const ICONS = {
@@ -47,83 +43,49 @@ export function useNavData() {
   const data = useMemo(
     () => [
       {
-        //subheader: 'management',
         items: [
           {
             title: 'Dashboard',
-            path: paths.dashboard.group.root,
+            path: paths.dashboard.root,
             icon: ICONS.folder,
-            // children: [
-            //   { title: 'four', path: paths.dashboard.group.root },
-            //   { title: 'five', path: paths.dashboard.group.five },
-            //   { title: 'six', path: paths.dashboard.group.six },
-            // ],
           },
         ],
       },
-      // OVERVIEW
-      // ----------------------------------------------------------------------
       {
-        // subheader: 'overview v5.5.0',
         items: [
-          { title: 'Staking', path: paths.dashboard.root, icon: ICONS.banking },
-          // { title: 'two', path: paths.dashboard.two, icon: ICONS.ecommerce },
-          // {
-          //   title: 'three',
-          //   path: paths.dashboard.three,
-          //   icon: ICONS.analytics,
-          // },
+          { title: 'Staking',
+            path: paths.dashboard.group.root,
+            icon: ICONS.banking 
+          }
         ],
       },
       {
-        //subheader: 'management',
         items: [
           {
             title: 'Chat',
             path: paths.dashboard.group.five,
             icon: ICONS.chat,
-            // children: [
-            //   { title: 'four', path: paths.dashboard.group.root },
-            //   { title: 'five', path: paths.dashboard.group.five },
-            //   { title: 'six', path: paths.dashboard.group.six },
-            // ],
           },
         ],
       },
       {
-        //subheader: 'management',
         items: [
           {
             title: 'Social',
             path: paths.dashboard.group.six,
             icon: ICONS.blog,
-            // children: [
-            //   { title: 'four', path: paths.dashboard.group.root },
-            //   { title: 'five', path: paths.dashboard.group.five },
-            //   { title: 'six', path: paths.dashboard.group.six },
-            // ],
           },
         ],
       },
       {
-        //subheader: 'management',
         items: [
           {
             title: 'Docs',
             path: paths.dashboard.two,
             icon: ICONS.file,
-            // children: [
-            //   { title: 'four', path: paths.dashboard.group.root },
-            //   { title: 'five', path: paths.dashboard.group.five },
-            //   { title: 'six', path: paths.dashboard.group.six },
-            // ],
           },
         ],
       },
-
-      // MANAGEMENT
-      // ----------------------------------------------------------------------
-       
     ],
     []
   );

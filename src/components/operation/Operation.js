@@ -58,7 +58,6 @@ const Operation = ({ sx }) => {
         display: 'flex',
         flexDirection: 'column',
         width: '100%',
-        maxWidth: '360px', // Slightly narrower width
         margin: '0 auto',
       }}
     >

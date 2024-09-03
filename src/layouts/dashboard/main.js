@@ -56,9 +56,9 @@ export default function Main({ children, sx, ...other }) {
           }),
         }),
         ...sx,
-        ml: '-200px',
-        pl: '200px',
-        mb: '30px',
+        ml: {xs: '0px', lg: '-200px'},
+        pl: {xs: '0px', lg: '200px'},
+        mb: {xs: '0px', lg: '30px'},
         pb: '60px',
         backgroundColor: '#5F1400'
       }}

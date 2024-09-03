@@ -81,7 +81,7 @@ export default function RootLayout({ children }) {
                   <Box
                     sx={{
                       height: 'maxHeight',
-                      p: '40px',
+                      p: {xs: '0px', md: '40px'},
                       background:
                         'linear-gradient(97.03deg, #5F1400 11.56%, #A82400 11.56%, #A82400 44.93%, #FFC700 44.94%, #FFC700 83.88%, #0060A9 83.88%)',
                     }}

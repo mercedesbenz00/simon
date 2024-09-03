@@ -4,9 +4,11 @@ import OneView from 'src/sections/one/view';
 // ----------------------------------------------------------------------
 
 export const metadata = {
-  title: 'Dashboard: One',
+  title: 'Staking',
 };
 
-export default function Page() {
-  return <OneView />;
-}
+const Page = () => (
+    <OneView />
+)
+
+export default Page;

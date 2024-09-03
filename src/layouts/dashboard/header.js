@@ -16,11 +16,11 @@ import Logo from 'src/components/logo';
 import SvgColor from 'src/components/svg-color';
 import { useSettingsContext } from 'src/components/settings';
 //
-import { HEADER, NAV } from '../config-layout';
 import Slide from '@mui/material/Slide';
 import { useState, useEffect } from 'react';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-import WalletContextProvider from 'src/components/WalletContextProvider'
+import ConnectWallet from 'src/components/connectwallet/ConnectWallet';
+import { Web3ModalProvider } from 'src/components/connectwallet/Web3ModalProvider';
+import { HEADER, NAV } from '../config-layout';
 // ----------------------------------------------------------------------
 
 export default function Header({ onOpenNav }) {
@@ -70,33 +70,24 @@ export default function Header({ onOpenNav }) {
             }}
             variant="h3"
           >
-            STAKING
+            SIMON
           </Typography>        
         </Stack>
       </Slide>
       <Slide direction="left" in={slideIn} timeout={500} style={{ transitionDelay: slideIn ? '1000ms' : '0ms' }}>
       <Stack>
-        <WalletContextProvider>
-          <WalletMultiButton/>
-        </WalletContextProvider>
+      <Web3ModalProvider>
+            <ConnectWallet />
+          </Web3ModalProvider>
         </Stack>
       </Slide>
     </>
   );
-  /* 
-</Stack> above were
-<LanguagePopover />
 
-<NotificationsPopover />
-
-<ContactsPopover />
-
-<SettingsButton />
-
-<AccountPopover /> */
   return (
     <AppBar
       sx={{
+        display: {xs: 'flex', lg: 'none'},
         bgcolor: '#DFA811',
         height: HEADER.H_MOBILE,
         zIndex: theme.zIndex.appBar + 1,

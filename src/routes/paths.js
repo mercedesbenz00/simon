@@ -9,21 +9,21 @@ const ROOTS = {
 
 export const paths = {
   minimalUI: 'https://mui.com/store/items/minimal-dashboard/',
-  //AUTH
+  // AUTH
   auth: {
     jwt: {
       login: `${ROOTS.AUTH}/jwt/login`,
       register: `${ROOTS.AUTH}/jwt/register`,
     },
   },
-  //DASHBOARD
+  // DASHBOARD
   dashboard: {
     root: ROOTS.DASHBOARD,
     one: `${ROOTS.DASHBOARD}/one`,
     two: `${ROOTS.DASHBOARD}/two`,
     three: `${ROOTS.DASHBOARD}/three`,
     group: {
-      root: `${ROOTS.DASHBOARD}/group`,
+      root: `${ROOTS.DASHBOARD}/staking`,
       five: `${ROOTS.DASHBOARD}/group/five`,
       six: `${ROOTS.DASHBOARD}/group/six`,
     },

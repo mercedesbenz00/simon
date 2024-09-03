@@ -3,7 +3,11 @@ import { useEffect, useState, useCallback } from 'react';
 // ----------------------------------------------------------------------
 
 export function useLocalStorage(key, initialState) {
-  const [state, setState] = useState(initialState);
+  const [state, setState] = useState(() => {
+    // Initialize state from localStorage if available, otherwise use initialState
+    const restored = getStorage(key);
+    return restored !== null ? restored : initialState;
+  });
 
   useEffect(() => {
     const restored = getStorage(key);
@@ -19,15 +23,13 @@ export function useLocalStorage(key, initialState) {
   const updateState = useCallback(
     (updateValue) => {
       setState((prevValue) => {
-        setStorage(key, {
-          ...prevValue,
-          ...updateValue,
-        });
-
-        return {
+        const newValue = {
           ...prevValue,
           ...updateValue,
         };
+
+        setStorage(key, newValue);
+        return newValue;
       });
     },
     [key]
@@ -60,13 +62,13 @@ export const getStorage = (key) => {
   let value = null;
 
   try {
-    const result = window.localStorage.getItem(key);
+    // const result = window.localStorage.getItem(key);
 
-    if (result) {
-      value = JSON.parse(result);
+    if (typeof window !== 'undefined') {
+      value = JSON.parse(localStorage.getItem(key));
     }
   } catch (error) {
-    console.error(error);
+    console.error(`Error parsing JSON from localStorage for key "${key}":`, error);
   }
 
   return value;
@@ -76,7 +78,7 @@ export const setStorage = (key, value) => {
   try {
     window.localStorage.setItem(key, JSON.stringify(value));
   } catch (error) {
-    console.error(error);
+    console.error(`Error setting JSON in localStorage for key "${key}":`, error);
   }
 };
 
@@ -84,6 +86,6 @@ export const removeStorage = (key) => {
   try {
     window.localStorage.removeItem(key);
   } catch (error) {
-    console.error(error);
+    console.error(`Error removing key "${key}" from localStorage:`, error);
   }
 };

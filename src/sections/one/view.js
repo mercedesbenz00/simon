@@ -4,15 +4,13 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import { useSettingsContext } from 'src/components/settings';
-import { Grid, Paper } from '@mui/material';
+import { Grid } from '@mui/material';
 import PoolCard from 'src/components/pool-card';
 import StakingDrawer from 'src/components/drawer';
 import { useState } from 'react';
 import MetricsStaking from 'src/components/metrics_staking';
-import Fade from '@mui/material/Fade';
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-
 import ConnectWallet from 'src/components/connectwallet/ConnectWallet';
 import { Web3ModalProvider } from 'src/components/connectwallet/Web3ModalProvider';
 
@@ -23,13 +21,24 @@ const Cell = styled(Grid)({
   color: '#FFD700',
   fontWeight: 'bold',
 });
+
 export default function OneView() {
   const settings = useSettingsContext();
-  const [drawOpened, setDrawerOpened] = useState(false);
+  const [drawerOpened, setDrawerOpened] = useState(false);
   const [mounted, setMounted] = React.useState(false);
+
   React.useEffect(() => {
     setMounted(true);
-  });
+  }, []);
+
+  const handleStakeButtonClick = () => {
+    setDrawerOpened(true);
+  };
+
+  const handleCloseDrawer = () => {
+    setDrawerOpened(false);
+  };
+
   return (
     <Container
       maxWidth={false}
@@ -41,7 +50,6 @@ export default function OneView() {
       }}
     >
       {/* Top Cards Section */}
-
       <Box
         component="img"
         src="/favicon/attachment.png"
@@ -51,7 +59,6 @@ export default function OneView() {
           top: '20%',
           left: '50%',
           width: '60%',
-          height: '85%',
           opacity: '0.04',
         }}
       />
@@ -63,7 +70,11 @@ export default function OneView() {
           p: 2,
         }}
       >
-        <Cell item md={2} sx={{ display: 'flex', justifyContent: 'space-around' }}>
+        <Cell
+          item
+          md={2}
+          sx={{ display: { xs: 'none', lg: 'flex' }, justifyContent: 'space-around' }}
+        >
           <Typography variant="h6" sx={{ flexGrow: 1, color: '#ffc107', fontWeight: 'bold' }}>
             Stacking
           </Typography>
@@ -72,19 +83,20 @@ export default function OneView() {
           </Web3ModalProvider>
         </Cell>
       </Box>
-
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <MetricsStaking />
+      <Box sx={{ mt: '20px' }}>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <MetricsStaking />
+          </Grid>
         </Grid>
-      </Grid>
+      </Box>
       <Box
         sx={{
           mb: 1,
           p: 2,
         }}
       >
-        <PoolCard onStakeButtonClick={() => setDrawerOpened(true)} mode="Active" />
+        <PoolCard onStakeButtonClick={handleStakeButtonClick} mode="Active" />
       </Box>
       <Box
         sx={{
@@ -92,8 +104,11 @@ export default function OneView() {
           p: 2,
         }}
       >
-        <PoolCard onStakeButtonClick={() => setDrawerOpened(true)} mode="Closed" />
+        <PoolCard onStakeButtonClick={handleStakeButtonClick} mode="Closed" />
       </Box>
+
+      {/* Staking Drawer */}
+      <StakingDrawer open={drawerOpened} onClose={handleCloseDrawer} />
     </Container>
   );
 }

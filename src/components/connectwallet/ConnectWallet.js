@@ -102,7 +102,11 @@ export default function ConnectWallet() {
               'aria-labelledby': 'basic-button',
             }}
           >
-            <MenuItem onClick={handleDisconnect}>Disconnect</MenuItem>
+            <MenuItem onClick={handleDisconnect}
+              sx={{
+                backgroundColor: '#0066cc',
+                minWidth: '140px',
+            }}>Disconnect</MenuItem>
           </Menu>
         </div>
       ) : (

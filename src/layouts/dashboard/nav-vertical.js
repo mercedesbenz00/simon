@@ -17,7 +17,6 @@ import { NavSectionVertical } from 'src/components/nav-section';
 //
 import { NAV } from '../config-layout';
 import { useNavData } from './config-navigation';
-import { NavToggleButton, NavUpgrade } from '../_common';
 
 // ----------------------------------------------------------------------
 
@@ -67,16 +66,15 @@ export default function NavVertical({ openNav, onCloseNav }) {
     <Box
       component="nav"
       sx={{
+        display: {xs: 'none', lg: 'block'},
         flexShrink: { lg: 0 },
         width: { lg: NAV.W_VERTICAL },
-        height: 'calc(100vh - 122px)',
         position: 'relative',
-        top: '82px',
+        marginTop: '102px',
         background: 'linear-gradient(133.69deg, #A82400 51.24%, #A82400 71.53%, #0060A9 71.53%);',
-        clipPath: 'polygon(0 -10000px, 100% -10000px, 100% 90%, 0 100%)',
+        clipPath: 'polygon(0 -10000px, 100% -10000px, 100% calc(90%), 0 calc(100% ))',
       }}
     >
-      {/* <NavToggleButton /> */}
       <Box
         sx={{
           position: 'relative',

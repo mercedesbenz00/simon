@@ -1,12 +1,10 @@
 'use client';
 
 // @mui
-import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import { Container, Grid } from '@mui/material';
 import Typography from '@mui/material/Typography';
 // components
-import useSettingsContext from 'src/components/settings';
 import Metrics from 'src/components/metrics';
 import MarketOverview from 'src/components/marketoverview';
 import Operation from 'src/components/operation';
@@ -14,8 +12,6 @@ import SocialWallets from 'src/components/socialwallets';
 import SimonChat from 'src/components/simonchat';
 import SimonSocials from 'src/components/simonsocials';
 import { styled } from '@mui/material/styles';
-import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
-import WalletContextProvider from 'src/components/WalletContextProvider';
 
 import ConnectWallet from 'src/components/connectwallet/ConnectWallet';
 import { Web3ModalProvider } from 'src/components/connectwallet/Web3ModalProvider';
@@ -27,7 +23,6 @@ const Cell = styled(Grid)({
   color: '#FFD700',
   fontWeight: 'bold',
 });
-// ----------------------------------------------------------------------
 
 export default function FourView() {
   return (
@@ -50,7 +45,6 @@ export default function FourView() {
           top: '20%',
           left: '50%',
           width: '60%',
-          height: '85%',
           opacity: '0.04',
         }}
       />
@@ -59,10 +53,10 @@ export default function FourView() {
           mt: 3,
           mb: 1,
           width: 1,
-          p: 3,
+          p: 3,          
         }}
       >
-        <Cell item md={2} sx={{ display: 'flex', justifyContent: 'space-around' }}>
+        <Cell item md={2} sx={{ display: {xs: 'none', lg: 'flex'}, justifyContent: 'space-around' }}>
           <Typography variant="h6" sx={{ flexGrow: 1, color: '#ffc107', fontWeight: 'bold' }}>
             Dashboard
           </Typography>
@@ -77,21 +71,19 @@ export default function FourView() {
           <Metrics />
         </Grid>
         <Grid container item spacing={3} alignItems="stretch">
-          <Grid item xs={12} md={8} sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Grid item xs={12} md={12} lg={8} sx={{ display: 'flex', flexDirection: 'column' }}>
             <MarketOverview sx={{ flexGrow: 1 }} />
           </Grid>
-          <Grid item xs={12} md={4} sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Grid item xs={12} md={6} lg={4} sx={{ display: 'flex', flexDirection: 'column' }}>
             <Operation sx={{ flexGrow: 1 }} />
           </Grid>
-        </Grid>
-        <Grid container item xs={12} spacing={3}>
-          <Grid item xs={12} md={4} lg={4} sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Grid item xs={12} md={6} lg={4} sx={{ display: 'flex', flexDirection: 'column' }}>
             <SocialWallets sx={{ flexGrow: 1 }} />
           </Grid>
-          <Grid item xs={12} md={4} lg={4} sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Grid item xs={12} md={6} lg={4} sx={{ display: 'flex', flexDirection: 'column' }}>
             <SimonChat sx={{ flexGrow: 1 }} />
           </Grid>
-          <Grid item xs={12} md={4} lg={4} sx={{ display: 'flex', flexDirection: 'column' }}>
+          <Grid item xs={12} md={6} lg={4} sx={{ display: 'flex', flexDirection: 'column' }}>
             <SimonSocials sx={{ flexGrow: 1 }} />
           </Grid>
         </Grid>
