@@ -66,7 +66,7 @@ export default function NavVertical({ openNav, onCloseNav }) {
     <Box
       component="nav"
       sx={{
-        display: {xs: 'none', lg: 'block'},
+        display: { xs: 'none', lg: 'block' },
         flexShrink: { lg: 0 },
         width: { lg: NAV.W_VERTICAL },
         position: 'relative',
@@ -88,7 +88,7 @@ export default function NavVertical({ openNav, onCloseNav }) {
       </Box>
 
       {lgUp ? (
-        <Box sx={{mt: '-80px', position: 'relative' }}>
+        <Box sx={{ mt: '-80px', position: 'relative' }}>
           <Stack
             sx={{
               height: 1,
@@ -107,6 +107,9 @@ export default function NavVertical({ openNav, onCloseNav }) {
           PaperProps={{
             sx: {
               width: NAV.W_VERTICAL,
+              background:
+                'linear-gradient(97.03deg, #5F1400 11.56%, #A82400 11.56%, #A82400 44.93%, #FFC700 44.94%, #FFC700 83.88%, #0060A9 83.88%) !important',
+              paddingY: '30px'
             },
           }}
         >

@@ -66,7 +66,6 @@ export default function Header({ onOpenNav }) {
           <Typography
             sx={{
               color: 'white',
-              textShadow: '0px 4px 7px #000000',
             }}
             variant="h3"
           >

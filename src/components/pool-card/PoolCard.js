@@ -154,7 +154,7 @@ const PoolCard = ({ onStakeButtonClick, mode = 'Active' }) => {
                 md={2.4}
                 sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}
               >
-                <img src="/favicon/logo.png" width={56} height={24} alt="Pool Logo" />
+                <img src="/favicon/logo.png" width={56} height={24} alt="Pool Logo" style={{marginRight: '5px'}}/>
                 <StakeButton onClick={onStakeButtonClick} />
               </Cell>
               <Cell item md={2.4}>
@@ -189,7 +189,7 @@ const PoolCard = ({ onStakeButtonClick, mode = 'Active' }) => {
                   md={2}
                   sx={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center' }}
                 >
-                  <img src="/favicon/logo.png" width={56} height={24} alt="Pool Logo" />
+                  <img src="/favicon/logo.png" width={56} height={24} alt="Pool Logo" style={{marginRight: '5px'}} />
                   <StakeButton onClick={onStakeButtonClick} />
                 </Cell>
                 <Cell item md={2}>
